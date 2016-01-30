@@ -29,8 +29,15 @@ public class FlyController : VehicleControler {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position += forward * speed * Time.deltaTime;
+        //transform.position += forward * speed * Time.deltaTime;
 	}
+    /// <summary>
+    /// Used for adding up forces
+    /// </summary>
+    protected override void CalcSteeringForces()
+    {
+
+    }
 
 
 }
