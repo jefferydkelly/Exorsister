@@ -19,6 +19,7 @@ abstract public class VehicleControler : GameObjectController {
     public float mass;
     public float radius;
 
+
     public GameObjectController gameControl;//the game object controller
     public MinigameController mG;//the minigame object for accessing other objects
 
@@ -142,5 +143,7 @@ abstract public class VehicleControler : GameObjectController {
         return Seek(cohVect);
 
     }
+
+
 
 }
