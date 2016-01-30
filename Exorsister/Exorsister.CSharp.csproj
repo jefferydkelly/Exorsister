@@ -75,11 +75,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\DemonEscapeScript.cs" />
+    <Compile Include="Assets\Scripts\EscapeGameController.cs" />
     <Compile Include="Assets\Scripts\FlyController.cs" />
     <Compile Include="Assets\Scripts\FlyGameController.cs" />
     <Compile Include="Assets\Scripts\GameObjectController.cs" />
     <Compile Include="Assets\Scripts\GameOverScreenController.cs" />
     <Compile Include="Assets\Scripts\MinigameController.cs" />
+    <Compile Include="Assets\Scripts\PentagramGameController.cs" />
+    <Compile Include="Assets\Scripts\PentagramPointController.cs" />
     <Compile Include="Assets\Scripts\StartMenuController.cs" />
     <Compile Include="Assets\Scripts\VehicleControler.cs" />
     <Compile Include="Assets\Scripts\VictoryScreenController.cs" />
