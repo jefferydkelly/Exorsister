@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Holy Water Game.unity
   - enabled: 1
     path: Assets/Scenes/Fly Swatter.unity
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity

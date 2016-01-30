@@ -41,7 +41,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0fc43880349294582c463385297587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: 
   timeRemainingText: {fileID: 240126124}
   fliesRemainingText: {fileID: 682674672}
 --- !u!1 &361985308
