@@ -16,17 +16,15 @@ abstract public class VehicleControler : GameObjectController {
     //define movement behaviors
     public float maxSpeed;
     public float maxForce;
-    public float mass;
+    public float mass = 1;
     public float radius;
-
-    public GameObjectController gameControl;//the game object controller
-    public MinigameController mG;//the minigame object for accessing other objects
-
-    void Start () {
+    public Vector3 forward = new Vector3(1, 0, 0);
+    public float wanderDistance = 3;
+    public float wanderRadius = 1;
+    void Start()
+    {
         acceleration = Vector3.zero;
-        velocity = transform.forward;
-        gameControl = GetComponent<GameObjectController>();//getting a refrence to the other script
-        mG = GetComponent<MinigameController>();//getting refrence to the script
+        velocity = forward;// transform.forward;
     }
 
     /// <summary>
@@ -38,16 +36,19 @@ abstract public class VehicleControler : GameObjectController {
     void Update () {
         CalcSteeringForces();
         //Debug.Log ("acceleration: " + acceleration.x + " " + acceleration.y + " " + acceleration.z);
+     
         velocity += acceleration * Time.deltaTime;
-        velocity.z = 1;//setting the z location to be default 1 for now
-
+        velocity.z = 0;//setting the z location to be default 1 for now
+        
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
-
-
+       
+        transform.position += velocity * Time.deltaTime;
 
         //reset
         acceleration = Vector3.zero;
-        transform.forward = velocity.normalized;
+        
+        //transform.forward = velocity.normalized;
+        forward = velocity.normalized;
     }
 
     /// <summary>
@@ -107,11 +108,11 @@ abstract public class VehicleControler : GameObjectController {
         if (Vector3.Dot(desired, velocity) < 0)
         {
             desired -= velocity;
-            desired.y = 0;//dont need to seek y, only z and x
+            desired.z = 0;//dont need to seek y, only z and x
         }
         else {
             desired += velocity;
-            desired.y = 0;//dont need to seek y, only z and x
+            desired.z = 0;//dont need to seek y, only z and x
         }
 
         //desired.y = 0;
@@ -142,5 +143,15 @@ abstract public class VehicleControler : GameObjectController {
         return Seek(cohVect);
 
     }
+
+    public Vector3 Wander()
+    {
+        Vector3 wanderStartPoint = transform.position + forward * wanderDistance;
+        float ang = Random.Range(0, Mathf.PI * 2);
+        Vector3 wanderOffset = new Vector3(Mathf.Cos(ang), Mathf.Sin(ang)) * wanderRadius;
+        return Seek(wanderStartPoint + wanderOffset);
+    }
+
+
 
 }
