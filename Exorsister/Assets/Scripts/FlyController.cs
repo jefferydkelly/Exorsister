@@ -12,7 +12,7 @@ public class FlyController : VehicleControler {
     //Safe distance
     public float safeDist = 10.0f;
     public float avoidWeight = 80.0f;
-    //public BoundingArea bounds;
+   
 
     //variable weight for the vectors
     public float alignW, seperateW, cohW, inBoundsW;
