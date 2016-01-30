@@ -9,11 +9,11 @@ public class FlyController : GameObjectController {
     public static List<FlyController> flies;
 	// Use this for initialization
 	void Start () {
-	    if (flies == null)
+	    if (FlyController.flies == null)
         {
-            flies = new List<FlyController>();
+            FlyController.flies = new List<FlyController>();
         }
-        flies.Add(this);
+        FlyController.flies.Add(this);
     }
 	
 	// Update is called once per frame
