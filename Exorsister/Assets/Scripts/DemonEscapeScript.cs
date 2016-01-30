@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DemonEscapeScript : MonoBehaviour {
+public class DemonEscapeScript : GameObjectController
+{
 
 	int direction; // Number 0-7 for which direction he's heading
 	// Use this for initialization
+	private bool escaped = false;
 	void Start () 
 	{
 		direction = (int)Random.Range(0,8);
@@ -13,21 +15,20 @@ public class DemonEscapeScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		transform.Translate (Vector3.right * Time.deltaTime);
+		//transform.Translate (Vector3.right * Time.deltaTime);
 	}
 
 	void OnTriggerExit(Collider col)
 	{
-		print ("test");
-
-		//{
-			//End Game
-		//	print("Game Over");
-		//}
+		escaped = true;
 	}
 
-	void OnTriggerEnter(Collider col)
+	public bool Escaped 
 	{
-		print ("test");
+		get 
+		{
+			return escaped;
+		}
 	}
+
 }
