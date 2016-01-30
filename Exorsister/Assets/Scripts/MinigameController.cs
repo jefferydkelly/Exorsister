@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-#if UNITY_5_3
 using UnityEngine.SceneManagement;
-#endif
 using System.Collections;
 
 public class MinigameController : MonoBehaviour {
@@ -22,20 +20,12 @@ public class MinigameController : MonoBehaviour {
 
     public void Win()
     {
-		//SceneManager.LoadScene(nextScene);
-#if UNITY_5_3
-		SceneManager.LoadScene("Win Screen");
-#else
-		Application.LoadLevel("Win Screen");
-#endif
-	}
+        //SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene("Win Screen");
+    }
 
-	public void Lose()
+    public void Lose()
     {
-#if UNITY_5_3
-		SceneManager.LoadScene("Game Over");
-#else
-		Application.LoadLevel("Game Over");
-#endif
-	}
+        SceneManager.LoadScene("Game Over");
+    }
 }
