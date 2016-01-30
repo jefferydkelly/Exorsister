@@ -78,8 +78,10 @@
     <Compile Include="Assets\Scripts\FlyController.cs" />
     <Compile Include="Assets\Scripts\FlyGameController.cs" />
     <Compile Include="Assets\Scripts\GameObjectController.cs" />
+    <Compile Include="Assets\Scripts\GameOverScreenController.cs" />
     <Compile Include="Assets\Scripts\MinigameController.cs" />
     <Compile Include="Assets\Scripts\StartMenuController.cs" />
+    <Compile Include="Assets\Scripts\VictoryScreenController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

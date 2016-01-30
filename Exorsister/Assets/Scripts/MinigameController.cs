@@ -9,6 +9,7 @@ public class MinigameController : MonoBehaviour {
     public void Win()
     {
         //SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene("Win Screen");
     }
 
     public void Lose()
