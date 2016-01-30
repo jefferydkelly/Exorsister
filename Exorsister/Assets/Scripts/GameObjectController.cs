@@ -34,6 +34,11 @@ public class GameObjectController : MonoBehaviour {
         {
             return IsMouseOver();
         }
-        return false;
+     	return false;
     }
+
+	public Vector3 GetMousePos()
+	{
+		return Input.mousePosition;
+	}
 }
