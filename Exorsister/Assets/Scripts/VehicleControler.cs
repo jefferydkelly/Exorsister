@@ -3,7 +3,7 @@ using System.Collections;
 
 using System.Collections.Generic;
 
-abstract public class VehicleControler : MonoBehaviour {
+abstract public class VehicleControler : GameObjectController {
 
     // Use this for initialization
     //movement
