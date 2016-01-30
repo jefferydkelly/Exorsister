@@ -12,11 +12,16 @@ public class EscapeGameController : MinigameController
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
 		if (demonEscape.Escaped) 
 		{
 			Lose ();
+		}
+
+		if (demonEscape.time <= 0) 
+		{
+			Win ();
 		}
 	}
 }
