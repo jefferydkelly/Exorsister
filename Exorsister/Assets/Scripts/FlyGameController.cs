@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class FlyGameController : VehicleControler {
@@ -80,5 +81,16 @@ public class FlyGameController : VehicleControler {
     protected override void CalcSteeringForces()
     {
 
+    }
+
+    public void Win()
+    {
+        //SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene("Win Screen");
+    }
+
+    public void Lose()
+    {
+        SceneManager.LoadScene("Game Over");
     }
 }
