@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Fly Swatter.unity
+- path: Assets/Scenes/Holy Water Game.unity
   isLoaded: 1
   isActive: 1
