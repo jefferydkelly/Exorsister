@@ -6,6 +6,7 @@ public class FlyGameController : MinigameController {
     public float timeRemaining = 60.0f;
     public Text timeRemainingText;
     public Text fliesRemainingText;
+    public Text hitText;
 	// Use this for initialization
 	void Start () {
 	
@@ -17,6 +18,30 @@ public class FlyGameController : MinigameController {
         timeRemainingText.text = "Time Remaining: " + Mathf.RoundToInt(timeRemaining);
         fliesRemainingText.text = "Flies Remaining: " + FlyController.flies.Count;
         
+        if (Input.GetMouseButtonDown(0))
+        {
+            bool hit = false;
+            FlyController toRemove = null;
+            foreach (FlyController fly in FlyController.flies) {
+                if (fly.IsBeingClicked())
+                {
+                    toRemove = fly;
+                    hit = true;
+                }
+            }
+
+            if (hit)
+            {
+                FlyController.flies.Remove(toRemove);
+                Destroy(toRemove.gameObject);
+                hitText.text = "Yeah!";
+                Invoke("ClearHitText", 1.0f);
+            } else
+            {
+                hitText.text = "Miss!";
+                Invoke("ClearHitText", 1.0f);
+            }
+        }
         if (FlyController.flies.Count == 0)
         {
             Win();
@@ -25,4 +50,9 @@ public class FlyGameController : MinigameController {
             Lose();
         }
 	}
+
+    public void ClearHitText()
+    {
+        hitText.text = "";
+    }
 }

@@ -19,11 +19,5 @@ public class FlyController : GameObjectController {
 	// Update is called once per frame
 	void Update () {
         //transform.position += forward * speed * Time.deltaTime;
-
-        if (IsBeingClicked())
-        {
-            FlyController.flies.Remove(this);
-            Destroy(gameObject);
-        }
 	}
 }
