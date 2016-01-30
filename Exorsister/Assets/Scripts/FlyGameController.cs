@@ -2,13 +2,27 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class FlyGameController : MinigameController {
+public class FlyGameController : VehicleControler {
     public float timeRemaining = 60.0f;
     public Text timeRemainingText;
     public Text fliesRemainingText;
     public Text hitText;
-	// Use this for initialization
-	void Start () {
+
+    private float speed = 5.0f;
+    private Vector3 forward = new Vector2(1, 0);
+
+
+
+    //WEIGHTING!!!!----------------------
+    //Safe distance
+    public float avoidWeight = 80.0f;
+    //variable weight for the vectors
+    public float alignW, seperateW, cohW;
+    public float sepDist;
+
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -54,5 +68,17 @@ public class FlyGameController : MinigameController {
     public void ClearHitText()
     {
         hitText.text = "";
+    }
+
+    //we will make an array(or list) of spawned in flies(or locus)
+    //and then find the average position and location of them divide by the number
+    //or just make all the flies seperate from eachother(check to see if they are too close)
+
+    /// <summary>
+    /// Adding up all the forces and then sendign them to the VehicleController to then be added to acceleration
+    /// </summary>
+    protected override void CalcSteeringForces()
+    {
+
     }
 }
