@@ -23,8 +23,11 @@ public class PentagramPointController : GameObjectController {
                 select(false);
               
                 controller.AddPoint(this);
-                
-                pair.select(true);
+                if (controller.phase < 3)
+                {
+                    pair.select(true);
+                    
+                }
                 alreadyAdded = true;
                 
             }

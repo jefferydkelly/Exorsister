@@ -10,6 +10,7 @@ public class PentagramGameController : MinigameController {
     private LineRenderer lineRenderer;
     public bool lineUnbroken = false;
     public float radius = 10;
+    public int phase = 1;
 	void Start () {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.SetVertexCount(0);
@@ -68,9 +69,11 @@ public class PentagramGameController : MinigameController {
                 //circlePoints[i].pair = circlePoints[(i + 1) % circlePoints.Count];
                 circlePoints[i].pair = circlePoints[(i - 1 + circlePoints.Count) % circlePoints.Count];
             }
+            phase++;
             circlePoints[0].select(true);
         } else if (clearedPoints.Count == 22)
         {
+            phase++;
             Invoke("Win", 3.0f);
         }
     }
