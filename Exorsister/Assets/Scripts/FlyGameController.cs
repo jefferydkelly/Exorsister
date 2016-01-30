@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+#if UNITY_5_3
 using UnityEngine.SceneManagement;
+#endif
 using System.Collections;
 
 public class FlyGameController : VehicleControler {
@@ -85,12 +87,20 @@ public class FlyGameController : VehicleControler {
 
     public void Win()
     {
-        //SceneManager.LoadScene(nextScene);
-        SceneManager.LoadScene("Win Screen");
-    }
+		//SceneManager.LoadScene(nextScene);
+#if UNITY_5_3
+		SceneManager.LoadScene("Win Screen");
+#else
+		Application.LoadLevel("Win Screen");
+#endif
+	}
 
-    public void Lose()
+	public void Lose()
     {
-        SceneManager.LoadScene("Game Over");
-    }
+#if UNITY_5_3
+		SceneManager.LoadScene("Game Over");
+#else
+		Application.LoadLevel("Game Over");
+#endif
+	}
 }
