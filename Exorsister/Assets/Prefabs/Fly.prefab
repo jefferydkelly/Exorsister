@@ -87,16 +87,19 @@ MonoBehaviour:
   mass: 1
   radius: 1
   forward: {x: 1, y: 0, z: 0}
+  wanderDistance: 3
+  wanderRadius: 1
   safeDist: 10
   avoidWeight: 80
   mouseDist: 0
   alignW: 0.2
   seperateW: 0.2
-  cohW: 0.2
-  inBoundsW: 0.2
+  cohW: 1
+  inBoundsW: 1
   seekW: 0.2
   fleeW: 0.2
   lesserSeekW: 0.2
+  wanderW: 1
   sepDist: 0.2
   velDir: {x: 0, y: 0, z: 0}
   velCent: {x: 0, y: 0, z: 0}
@@ -175,11 +178,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cohW
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: inBoundsW
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: seekW
@@ -196,6 +199,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: sepDist
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: wanderW
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
