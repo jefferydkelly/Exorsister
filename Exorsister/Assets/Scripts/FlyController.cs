@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class FlyController : VehicleControler {
     
     private float speed = 5.0f;
-    private Vector3 forward = new Vector2(1, 0);
 
     //WEIGHTING!!!!
     //Safe distance
@@ -18,7 +17,7 @@ public class FlyController : VehicleControler {
     private Vector3 force;
 
     //variable weight for the vectors
-    public float alignW, seperateW, cohW, inBoundsW, seekW, fleeW, lesserSeekW;
+    public float alignW, seperateW, cohW, inBoundsW, seekW, fleeW, lesserSeekW, wanderW;
     public float sepDist;
     public static List<FlyController> flies;
     float dist;
@@ -49,22 +48,24 @@ public class FlyController : VehicleControler {
         force = Vector3.zero;
         Vector3 flockingForce = Vector3.zero;
 
-            dist = Vector3.Distance(mG.mousePos, transform.position);//getting the area (distance) from mouse to locus
+            dist = Vector3.Distance(GetMousePos(), transform.position);//getting the area (distance) from mouse to locus
             if(dist <= mouseDist)//if the fly is within the area of the mouse, the flies will flee
             {
-                flockingForce += Flee(mG.mousePos)*fleeW;
-            flockingForce += Seek(new Vector3(0, 0, 1))*lesserSeekW;
+                flockingForce += Flee(GetMousePos())*fleeW;
+            flockingForce += Seek(new Vector3(1, 0, 0))*lesserSeekW;
             }
             else if(dist > mouseDist)
         {
-            flockingForce += Seek(new Vector3(0, 0, 1)) * seekW;
+            flockingForce += Seek(new Vector3(1, 0, 0)) * seekW;
             flockingForce += Alignment(velDir)*alignW;
             flockingForce += Seperation(sepDist, flies)*seperateW;
             flockingForce += Cohesion(velCent)*cohW;
         }
+      
         force += flockingForce;
+        force += Wander() * wanderW;
         force = Vector3.ClampMagnitude(force, maxForce);
-
+        
         ApplyForce(force);//applying the forces to the acceleration to then be added
     }
 
@@ -83,16 +84,16 @@ public class FlyController : VehicleControler {
         }
         x = x / flies.Count;
         y = y / flies.Count;
-        z = 1;//z is going to be default 1
+        z = 0;//z is going to be default 1
 
         velDir = new Vector3(x, y, z);
     }
 
     private void CalFlockCenter()
     {
-          float x = 0;
-    float y = 0;
-    float z = 1;
+        float x = 0;
+        float y = 1;
+        float z = 0;
         for(int i = 0; i<flies.Count; i++)
         {
             velCent= flies[i].velocity;
@@ -103,7 +104,7 @@ public class FlyController : VehicleControler {
         }
         x = x / flies.Count;
         y = y / flies.Count;
-        z = 1;//z is going to be default 1
+        z = 0;//z is going to be default 1
 
         velCent = new Vector3(x, y, z);
     }

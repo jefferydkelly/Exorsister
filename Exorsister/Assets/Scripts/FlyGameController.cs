@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 #endif
 using System.Collections;
 
-public class FlyGameController : VehicleControler {
+public class FlyGameController : MinigameController {
     public float timeRemaining = 60.0f;
     public Text timeRemainingText;
     public Text fliesRemainingText;
@@ -72,35 +72,4 @@ public class FlyGameController : VehicleControler {
     {
         hitText.text = "";
     }
-
-    //we will make an array(or list) of spawned in flies(or locus)
-    //and then find the average position and location of them divide by the number
-    //or just make all the flies seperate from eachother(check to see if they are too close)
-
-    /// <summary>
-    /// Adding up all the forces and then sendign them to the VehicleController to then be added to acceleration
-    /// </summary>
-    protected override void CalcSteeringForces()
-    {
-
-    }
-
-    public void Win()
-    {
-		//SceneManager.LoadScene(nextScene);
-#if UNITY_5_3
-		SceneManager.LoadScene("Win Screen");
-#else
-		Application.LoadLevel("Win Screen");
-#endif
-	}
-
-	public void Lose()
-    {
-#if UNITY_5_3
-		SceneManager.LoadScene("Game Over");
-#else
-		Application.LoadLevel("Game Over");
-#endif
-	}
 }
