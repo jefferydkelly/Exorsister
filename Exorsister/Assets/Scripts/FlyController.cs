@@ -24,6 +24,8 @@ public class FlyController : VehicleControler {
 
     public Vector3 velDir;
     public Vector3 velCenter;
+    public GameObject splat;
+    private bool dead = false;
 	// Use this for initialization
 	void Start () {
 	    if (FlyController.flies == null)
@@ -38,31 +40,52 @@ public class FlyController : VehicleControler {
     /// </summary>
     protected override void CalcSteeringForces()
     {
-        CalcFlockDir();
-        CalcFlockCenter();
+       
+            CalcFlockDir();
+            CalcFlockCenter();
 
-        force = Vector3.zero;
+            force = Vector3.zero;
 
-        Vector3 flockingForce = Vector3.zero;
+            Vector3 flockingForce = Vector3.zero;
 
-        dist = Vector3.Distance(GetMousePos(), transform.position);
-        if (dist <= mouseDist)
+            dist = Vector3.Distance(GetMousePos(), transform.position);
+            if (dist <= mouseDist)
+            {
+                flockingForce += Flee(GetMousePos()) * fleeW;
+                flockingForce += Seek(new Vector3(0, 0, 0)) * lesserSeekW;
+            }
+            else
+            {
+                flockingForce += Seek(Vector3.zero) * seekW;
+                flockingForce += Alignment(velDir) * alignW;
+                flockingForce += Seperation(sepDist, flies) * seperateW;
+                flockingForce += Cohesion(velCenter) * cohW;
+            }
+            force += flockingForce;
+            force += Wander() * wanderW;
+
+            force = Vector3.ClampMagnitude(force, maxForce);
+
+            ApplyForce(force);
+    }
+
+    void Update()
+    {
+        if (!dead)
         {
-            flockingForce += Flee(GetMousePos()) * fleeW;
-            flockingForce += Seek(new Vector3(0, 0, 0)) * lesserSeekW;
-        } else
-        {
-            flockingForce += Seek(Vector3.zero) * seekW;
-            flockingForce += Alignment(velDir) * alignW;
-            flockingForce += Seperation(sepDist, flies) * seperateW;
-            flockingForce += Cohesion(velCenter) * cohW;
+            CalcSteeringForces();
+            //Debug.Log ("acceleration: " + acceleration.x + " " + acceleration.y + " " + acceleration.z);
+            velocity += acceleration * Time.deltaTime;
+            velocity.z = 0;//setting the z location to be default 1 for now
+
+            velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
+
+            transform.position += velocity * Time.deltaTime;
+
+            //reset
+            acceleration = Vector3.zero;
+            forward = velocity.normalized;
         }
-        force += flockingForce;
-        force += Wander() * wanderW;
-
-        force = Vector3.ClampMagnitude(force, maxForce);
-  
-        ApplyForce(force);
     }
 
     private void CalcFlockDir()
@@ -102,5 +125,10 @@ public class FlyController : VehicleControler {
         velCenter = new Vector3(x, y, z);
     }
 
-
+    public void Splat()
+    {
+        GameObject mySplat = GameObject.Instantiate(splat);
+        mySplat.transform.position = new Vector3(transform.position.x, transform.position.y, 3);
+        Destroy(gameObject);
+    }
 }

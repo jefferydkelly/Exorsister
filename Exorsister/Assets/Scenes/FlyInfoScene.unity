@@ -782,8 +782,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoTextBox: {fileID: 827810322}
   infoText: Oh no!  The possessed is spitting locusts out of their mouth.  This is
-    more common that you might think.  Would you mind swatting them away so we can
-    get on with the exorcism?
+    more common than you might think.  I remember this one time at nun camp...On second
+    thought, I'd rather not talk about it.  Would you mind swatting them away so we
+    can get on with the exorcism?
   letterRevealSpeed: 20
   continueButton: {fileID: 223154284}
   nextScreen: Fly Swatter

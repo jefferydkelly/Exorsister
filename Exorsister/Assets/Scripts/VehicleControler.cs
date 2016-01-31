@@ -46,6 +46,7 @@ abstract public class VehicleControler : GameObjectController {
         //reset
         acceleration = Vector3.zero;
         forward = velocity.normalized;
+        
     }
 
     /// <summary>

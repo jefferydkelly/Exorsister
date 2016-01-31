@@ -38,7 +38,7 @@ public class FlyGameController : MinigameController {
             if (hit)
             {
                 FlyController.flies.Remove(toRemove);
-                Destroy(toRemove.gameObject);
+                toRemove.Splat();
                 hitText.text = "Yeah!";
                 Invoke("ClearHitText", 1.0f);
             } else
