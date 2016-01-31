@@ -54,7 +54,6 @@ public class PentagramGameController : MinigameController {
             {
                 float ang = Mathf.PI * 3 / 2 + sevenTwo * i;
                 GameObject go = points[i];
-                go.GetComponent<PentagramPointController>().reset();
                 circlePoints.Add(go.GetComponent<PentagramPointController>());
 
                 for (int j = 0; j < 2; j++)
