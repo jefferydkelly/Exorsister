@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fly
+  - Control
+  - Blue
+  - Red
+  - Black
+  - Yellow
+  - Silver
   layers:
   - Default
   - TransparentFX
