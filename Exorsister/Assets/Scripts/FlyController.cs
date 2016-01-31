@@ -129,6 +129,7 @@ public class FlyController : VehicleControler {
     {
         GameObject mySplat = GameObject.Instantiate(splat);
         mySplat.transform.position = new Vector3(transform.position.x, transform.position.y, 3);
+        
         Destroy(gameObject);
     }
 }
