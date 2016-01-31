@@ -90,7 +90,10 @@ public class PentagramGameController : MinigameController {
 
     // Update is called once per frame
     void Update () {
-        timeLimit -= Time.deltaTime;
+        if (phase < 3)
+        {
+            timeLimit -= Time.deltaTime;
+        }
 
         if (timeLimit <= 0)
         {
