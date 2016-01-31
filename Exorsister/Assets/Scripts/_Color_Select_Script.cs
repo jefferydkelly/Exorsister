@@ -5,7 +5,9 @@ using System.Collections.Generic;
 public class _Color_Select_Script : MonoBehaviour {
 
     public int colorSelect;
-    public List<Color> colorlist = new List<Color>();
+    //public List<Color> colorlist = new List<Color>();
+    public List<Material> matList = new List<Material>();
+    public List<string> matColors = new List<string>();
     string colorstring;
     int x = 5;
     //;
@@ -13,19 +15,28 @@ public class _Color_Select_Script : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
+        /*
         print(Color.white);
         colorlist.Add(Color.black);
         colorlist.Add(Color.blue);
         colorlist.Add(Color.red);
         colorlist.Add(Color.yellow);
         colorlist.Add(Color.gray);
+        */
         setColor();
+        
     }
 
     public void setColor()
     {
         int a = chooseNewColor();
         Renderer rend = GetComponent<Renderer>();
+        rend.material = matList[a];
+        matList.RemoveAt(a);
+        colorstring = matColors[a];
+        matColors.RemoveAt(a);
+
+        /*
         rend.material.SetColor("_Color", colorlist[a]);
 
         colorstring = colorlist[a].ToString();
@@ -49,8 +60,10 @@ public class _Color_Select_Script : MonoBehaviour {
         {
             colorstring = "Gray";
         }
-        gameObject.tag = colorstring;
+        
         colorlist.Remove(colorlist[a]);
+        */
+        gameObject.tag = colorstring;
         x--;
     }
 
