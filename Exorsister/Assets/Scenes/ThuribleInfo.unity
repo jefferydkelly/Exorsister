@@ -525,6 +525,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 431068, guid: 6a02dc4fc26005b4f9c02f0ee4b36434, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 431068, guid: 6a02dc4fc26005b4f9c02f0ee4b36434, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a02dc4fc26005b4f9c02f0ee4b36434, type: 2}
   m_IsPrefabParent: 0
@@ -634,6 +642,7 @@ GameObject:
   - 124: {fileID: 1811233262}
   - 81: {fileID: 1811233261}
   - 114: {fileID: 1811233266}
+  - 82: {fileID: 1811233267}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -721,12 +730,86 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoTextBox: {fileID: 386169862}
   infoText: Hi, I'm the Exor-Sister but most people just call me, Sister.  Welcome
-    to your first day on the job and boy will it be exciting.  We' ve got an exorcism
+    to your first day on the job and boy will it be exciting.  We've got an exorcism
     right off the bat.  First, you have to swing the tu-th-thurible.  Make sure you
-    hit it at the right times or the ritual won't work.
-  letterRevealSpeed: 20
+    hit they A, S or D key at the right times or the ritual won't work.
+  letterRevealSpeed: 50
   continueButton: {fileID: 981628984}
   nextScreen: ThuribleScene
+--- !u!82 &1811233267
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1811233260}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4fbbecc3f314b824c986ffebe13f46ba, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1922526294
 GameObject:
   m_ObjectHideFlags: 0
