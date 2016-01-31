@@ -18,7 +18,7 @@ public class DemonEscapeScript : GameObjectController
 		direction = (int)Random.Range(0,8);
 		center = new Vector3 (0, 1, 0);
 		speedMod = 5.0f;
-		g = gameObject.GetComponent("GameObject").gameObject;
+		g = transform.GetChild(0).gameObject;
 	}
 	
 	// Update is called once per frame
@@ -56,11 +56,11 @@ public class DemonEscapeScript : GameObjectController
 			switch (direction) {
 			case 2:
 				transform.Translate ((Vector3.right * Time.deltaTime) * speedMod);
-				rotate = 90;
+				rotate = 270;
 				break;
 			case 1:
 				transform.Translate ((((Vector3.right + Vector3.up) / 2) * Time.deltaTime) * speedMod);
-				rotate = 45;
+				rotate = 315;
 				break;
 			case 0:
 				transform.Translate ((Vector3.up * Time.deltaTime) * speedMod);
@@ -68,15 +68,15 @@ public class DemonEscapeScript : GameObjectController
 				break;
 			case 7:
 				transform.Translate ((((Vector3.left + Vector3.up) / 2) * Time.deltaTime) * speedMod);
-				rotate = 315;
+				rotate = 45;
 				break;
 			case 6:
 				transform.Translate ((Vector3.left * Time.deltaTime) * speedMod);
-				rotate = 270;
+				rotate = 90;
 				break;
 			case 5:
 				transform.Translate ((((Vector3.left + Vector3.down) / 2) * Time.deltaTime) * speedMod);
-				rotate = 225;
+				rotate = 135;
 				break;
 			case 4:
 				transform.Translate ((Vector3.down * Time.deltaTime) * speedMod);
@@ -84,7 +84,7 @@ public class DemonEscapeScript : GameObjectController
 				break;
 			case 3:
 				transform.Translate ((((Vector3.right + Vector3.down) / 2) * Time.deltaTime) * speedMod);
-				rotate = 135;
+				rotate = 225;
 				break;
 			default:
 				print ("ERROR");
@@ -93,6 +93,7 @@ public class DemonEscapeScript : GameObjectController
 
 			if (rotate != null)
 			{
+				g.transform.rotation = Quaternion.identity;
 				g.transform.Rotate(0,0,rotate);
 			}
 		}
