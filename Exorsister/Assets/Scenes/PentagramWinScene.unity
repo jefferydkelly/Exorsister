@@ -270,7 +270,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -264, y: 328}
+  m_AnchoredPosition: {x: -344, y: 373}
   m_SizeDelta: {x: 400, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &71706816
@@ -742,7 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoTextBox: {fileID: 2003776532}
-  infoText: You seem to be really good at art.  Mabe next time you can draw me like
+  infoText: You seem to be really good at art.  Maybe next time you can draw me like
     one of your French girls.
   letterRevealSpeed: 50
   continueButton: {fileID: 440935054}
@@ -859,7 +859,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -263, y: 70}
+  m_AnchoredPosition: {x: -370, y: 95}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2003776532

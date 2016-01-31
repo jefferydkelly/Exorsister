@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoTextBox: {fileID: 1417481099}
   infoText: You did really well for your first time.  I hear it's even better the
-    second.
+    second time.
   letterRevealSpeed: 50
   continueButton: {fileID: 560766831}
   nextScreen: PentagramIntro

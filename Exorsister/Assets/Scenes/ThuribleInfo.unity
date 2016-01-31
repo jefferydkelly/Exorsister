@@ -806,8 +806,8 @@ MonoBehaviour:
   infoTextBox: {fileID: 386169862}
   infoText: Hi, I'm the Exor-Sister but most people just call me, Sister.  Welcome
     to your first day on the job and boy will it be exciting.  We've got an exorcism
-    right off the bat.  First, you have to swing the tu-th-thurible.  Make sure you
-    hit they A, S or D key at the right times or the ritual won't work.
+    right off the bat.  First, you have to swing the t-thu-th-screw it. The thing.  Make
+    sure you hit they A, S or D key at the right times or the ritual won't work.
   letterRevealSpeed: 50
   continueButton: {fileID: 981628984}
   nextScreen: ThuribleScene

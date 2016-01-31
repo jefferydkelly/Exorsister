@@ -1,0 +1,26 @@
+Initialize engine version: 5.3.1f1 (cc9cbbcc37b4)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 680 (ID=0x1180)
+    Vendor:   NVIDIA
+    VRAM:     1989 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: \\banner.main.ad.rit.edu\students\rc7604\IGMProfile\Desktop\GGJ2016\Exorsister\Exes\Exorsister_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading \\banner.main.ad.rit.edu\students\rc7604\IGMProfile\Desktop\GGJ2016\Exorsister\Exes\Exorsister_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: \\banner.main.ad.rit.edu\students\rc7604\IGMProfile\Desktop\GGJ2016\Exorsister\Exes\Exorsister_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading \\banner.main.ad.rit.edu\students\rc7604\IGMProfile\Desktop\GGJ2016\Exorsister\Exes\Exorsister_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: \\banner.main.ad.rit.edu\students\rc7604\IGMProfile\Desktop\GGJ2016\Exorsister\Exes\Exorsister_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading \\banner.main.ad.rit.edu\students\rc7604\IGMProfile\Desktop\GGJ2016\Exorsister\Exes\Exorsister_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: \\banner.main.ad.rit.edu\students\rc7604\IGMProfile\Desktop\GGJ2016\Exorsister\Exes\Exorsister_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading \\banner.main.ad.rit.edu\students\rc7604\IGMProfile\Desktop\GGJ2016\Exorsister\Exes\Exorsister_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  1.052 seconds
+Platform assembly: \\banner.main.ad.rit.edu\students\rc7604\IGMProfile\Desktop\GGJ2016\Exorsister\Exes\Exorsister_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: \\banner.main.ad.rit.edu\students\rc7604\IGMProfile\Desktop\GGJ2016\Exorsister\Exes\Exorsister_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3840x1368 at 0,-288
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.326078 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 624 -> priority: 1 

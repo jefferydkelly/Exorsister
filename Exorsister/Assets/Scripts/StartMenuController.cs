@@ -19,4 +19,14 @@ public class StartMenuController : MonoBehaviour {
     {
         Application.Quit();
     }
+
+    public void GoToCredits()
+    {
+#if UNITY_5_3
+        SceneManager.LoadScene("CreditsScene");
+
+#else
+		Application.LoadLevel("CreditsScene");
+#endif
+    }
 }
