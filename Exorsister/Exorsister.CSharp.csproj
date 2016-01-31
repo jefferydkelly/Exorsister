@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\PentagramGameController.cs" />
     <Compile Include="Assets\Scripts\PentagramPointController.cs" />
     <Compile Include="Assets\Scripts\StartMenuController.cs" />
+    <Compile Include="Assets\Scripts\ThuribleCubeController.cs" />
     <Compile Include="Assets\Scripts\ThuribleGame.cs" />
     <Compile Include="Assets\Scripts\VehicleControler.cs" />
     <Compile Include="Assets\Scripts\VictoryScreenController.cs" />

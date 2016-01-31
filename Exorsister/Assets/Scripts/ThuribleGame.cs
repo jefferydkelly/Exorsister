@@ -1,40 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ThuribleGame : MinigameController {
-    public bool hit = false;
+   
     public float time = 15f;
+    public  List<GameObject> gos;
 	// Use this for initialization
 	void Start () {
-	
-	}
+        Invoke("SelectFirst", 0.25f);
+    }
+
+    public void SelectFirst ()
+    {
+        gos[2].GetComponent<ThuribleCubeController>().select(true);
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.Space) && !hit)
-        {
-            hit = true;
-        }
-
-        if (time == 0)
+        time -= Time.deltaTime;
+        if (time <= 0)
         {
             Win();
         }
     }
 
-
-
-    void OnTriggerEnter(Collider col)
+    public void SelectCube(GameObject go)
     {
-        hit = false;
-    }
-
-    void OnTriggerExit(Collider col)
-    {
-        if (!hit)
+        List<int> indexes = new List<int>();
+        indexes.Add(0);
+        indexes.Add(1);
+        indexes.Add(2);
+        indexes.RemoveAt(gos.IndexOf(go));
+        Debug.Log(gos.IndexOf(go));
+        if (Random.Range(0, 2) == 1)
         {
-            Lose();
+            gos[indexes[0]].GetComponent<ThuribleCubeController>().select(true);
+        } else
+        {
+            gos[indexes[1]].GetComponent<ThuribleCubeController>().select(true);
         }
     }
 }
