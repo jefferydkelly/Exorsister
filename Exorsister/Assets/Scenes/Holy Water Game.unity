@@ -248,6 +248,7 @@ MonoBehaviour:
   mousePos: {x: 0, y: 0, z: 0}
   nextScene: 
   demon: {fileID: 1590309277}
+  timeRemainingText: {fileID: 1589406026}
 --- !u!1 &947152903
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,8 +402,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -342.5, y: -175.5}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -214, y: 165}
+  m_SizeDelta: {x: 400, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1589406026
 MonoBehaviour:
@@ -425,10 +426,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0

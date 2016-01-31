@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class EscapeGameController : MinigameController
 {
 	public GameObject demon;
 	private DemonEscapeScript demonEscape;
+    public Text timeRemainingText;
+    public 
 	// Use this for initialization
 	void Start () 
 	{
@@ -14,6 +17,7 @@ public class EscapeGameController : MinigameController
 	// Update is called once per frame
 	void Update ()
 	{
+        timeRemainingText.text = "Time Remaining: " + Mathf.FloorToInt(demonEscape.time);
 		if (demonEscape.Escaped) 
 		{
 			Lose ();
