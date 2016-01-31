@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/title.unity
+=======
+- path: Assets/Scenes/CandleWinScene.unity
+>>>>>>> 6fbe5d913b919489bce69ce36cae12fea8b55ed7
   isLoaded: 1
   isActive: 1
