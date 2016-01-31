@@ -4,7 +4,20 @@ timeCreated: 1454207023
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: back
+    100002: imagePlane1
+    100004: //RootNode
+    100006: Thurible
+    400000: back
+    400002: imagePlane1
+    400004: //RootNode
+    400006: Thurible
+    2300000: Thurible
+    3300000: Thurible
+    4300000: Thurible
+    7400000: Take 001
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
