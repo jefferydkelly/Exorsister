@@ -15,3 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Over.unity
   - enabled: 1
     path: Assets/Scenes/Win Screen.unity
+  - enabled: 1
+    path: Assets/Scenes/FlyInfoScene.unity
+  - enabled: 1
+    path: Assets/Scenes/HolyWaterInfoScene.unity
+  - enabled: 1
+    path: Assets/Scenes/PentagramIntro.unity
+  - enabled: 1
+    path: Assets/Scenes/PentragramDrawingGame.unity
