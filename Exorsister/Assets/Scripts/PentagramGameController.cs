@@ -15,7 +15,7 @@ public class PentagramGameController : MinigameController {
     public Text timeRemaining;
     public float timeLimit = 30;
 	void Start () {
-        Debug.Log("Start");
+        
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.SetVertexCount(0);
         lineRenderer.SetColors(Color.white, Color.white);

@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mousePos: {x: 0, y: 0, z: 0}
-  nextScene: 
+  nextScene: CandleWinScene
   checkScore: 0
   timer: 20
 --- !u!33 &749745588

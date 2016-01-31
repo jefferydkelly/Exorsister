@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ThuribleInfo.unity
+- path: Assets/Scenes/FlyInfoScene.unity
   isLoaded: 1
   isActive: 1

@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mousePos: {x: 0, y: 0, z: 0}
-  nextScene: PentagramIntro
+  nextScene: ThurimleWinScreen
   time: 15
   gos:
   - {fileID: 727319327}

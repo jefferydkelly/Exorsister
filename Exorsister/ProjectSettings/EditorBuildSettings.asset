@@ -31,3 +31,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Candle game.unity
   - enabled: 1
     path: Assets/Scenes/CandleInfo.unity
+  - enabled: 1
+    path: Assets/Scenes/FlyWinScreen.unity
+  - enabled: 1
+    path: Assets/Scenes/CandleWinScene.unity
+  - enabled: 1
+    path: Assets/Scenes/PentagramWinScene.unity
+  - enabled: 1
+    path: Assets/Scenes/ThurimleWinScreen.unity
