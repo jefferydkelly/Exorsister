@@ -74,7 +74,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CandlePlacement.cs" />
     <Compile Include="Assets\Scripts\DemonEscapeScript.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\Scripts\DragRigidbody.cs" />
+    <Compile Include="Assets\Scripts\EscapeGameController.cs" />
+    <Compile Include="Assets\Scripts\FinishScript.cs" />
+>>>>>>> origin/pr/3
     <Compile Include="Assets\Scripts\FlyController.cs" />
     <Compile Include="Assets\Scripts\FlyGameController.cs" />
     <Compile Include="Assets\Scripts\GameObjectController.cs" />
