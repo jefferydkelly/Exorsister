@@ -10,7 +10,7 @@ TagManager:
   - Red
   - Black
   - Yellow
-  - Silver
+  - Gray
   layers:
   - Default
   - TransparentFX

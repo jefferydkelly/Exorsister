@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections;
 
 public class FinishScript : MonoBehaviour {
@@ -21,7 +21,7 @@ public class FinishScript : MonoBehaviour {
 
     void winGame()
     {
-
+        Destroy(gameObject);
     }
 
     void looseGame()
