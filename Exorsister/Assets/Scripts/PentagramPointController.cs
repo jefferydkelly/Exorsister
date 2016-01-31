@@ -6,7 +6,6 @@ public class PentagramPointController : GameObjectController {
     private bool isSelected = false;
     public PentagramPointController pair;
     public PentagramGameController controller;
-    private bool alreadyAdded = false;
    
 	// Use this for initialization
 	void Start () {
@@ -21,15 +20,13 @@ public class PentagramPointController : GameObjectController {
             if (isSelected)
             {
                 select(false);
-              
+                GetComponent<AudioSource>().Play();
                 controller.AddPoint(this);
                 if (controller.phase < 3)
                 {
                     pair.select(true);
                     
-                }
-                alreadyAdded = true;
-                
+                } 
             }
         }
 
@@ -59,10 +56,5 @@ public class PentagramPointController : GameObjectController {
         {
             GetComponent<SpriteRenderer>().color = Color.white;
         }
-    }
-
-    public void reset()
-    {
-        alreadyAdded = false;
     }
 }
