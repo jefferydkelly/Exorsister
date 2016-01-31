@@ -83,13 +83,16 @@
     <Compile Include="Assets\Scripts\FlyGameController.cs" />
     <Compile Include="Assets\Scripts\GameObjectController.cs" />
     <Compile Include="Assets\Scripts\GameOverScreenController.cs" />
+    <Compile Include="Assets\Scripts\InfoScreenController.cs" />
     <Compile Include="Assets\Scripts\MinigameController.cs" />
     <Compile Include="Assets\Scripts\PentagramGameController.cs" />
     <Compile Include="Assets\Scripts\PentagramPointController.cs" />
     <Compile Include="Assets\Scripts\StartMenuController.cs" />
+    <Compile Include="Assets\Scripts\ThuribleCubeController.cs" />
     <Compile Include="Assets\Scripts\ThuribleGame.cs" />
     <Compile Include="Assets\Scripts\VehicleControler.cs" />
     <Compile Include="Assets\Scripts\VictoryScreenController.cs" />
+    <Compile Include="Assets\Scripts\_Color_Select_Script.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

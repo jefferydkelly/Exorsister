@@ -1,33 +1,25 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections;
 
-public class FinishScript : MonoBehaviour {
+public class FinishScript : MinigameController {
     public int checkScore = 0;
     public float timer = 20;
 	// Use this for initialization
 	void Start () {
-	
+        nextScene = "FlyInfoScene";
 	}
 	
     public void increaseScore()
     {
         checkScore++;
+        Debug.Log(checkScore);
         if(checkScore == 5)
         {
-            
-            winGame();
+
+            Win();
         }
     }
 
-    void winGame()
-    {
-
-    }
-
-    void looseGame()
-    {
-
-    }
 	// Update is called once per frame
 	void Update () {
         
@@ -35,6 +27,6 @@ public class FinishScript : MonoBehaviour {
         {
             timer -= Time.deltaTime;
         }
-        else { looseGame(); }
+        else { Lose(); }
 	}
 }
