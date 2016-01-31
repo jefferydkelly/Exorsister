@@ -9,6 +9,7 @@ public class EscapeGameController : MinigameController
 	void Start () 
 	{
 		demonEscape = demon.GetComponent<DemonEscapeScript> ();
+        nextScene = "Win Screen";
 	}
 	
 	// Update is called once per frame
