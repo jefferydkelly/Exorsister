@@ -926,7 +926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cfc05ba7d4085749aff6af87a25391e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstGame: PentagramIntro
+  FirstGame: ThuribleInfo
 --- !u!1 &2035417804
 GameObject:
   m_ObjectHideFlags: 0

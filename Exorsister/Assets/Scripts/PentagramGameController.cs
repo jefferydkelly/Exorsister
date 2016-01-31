@@ -38,7 +38,6 @@ public class PentagramGameController : MinigameController {
         }
 
         points[0].GetComponent<PentagramPointController>().select(true);
-        nextScene = "FlyInfoScene";
     }
 
     public void AddPoint(PentagramPointController p)

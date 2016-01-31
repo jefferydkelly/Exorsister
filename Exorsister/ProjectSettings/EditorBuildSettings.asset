@@ -23,3 +23,11 @@ EditorBuildSettings:
     path: Assets/Scenes/PentagramIntro.unity
   - enabled: 1
     path: Assets/Scenes/PentragramDrawingGame.unity
+  - enabled: 1
+    path: Assets/Scenes/ThuribleInfo.unity
+  - enabled: 1
+    path: Assets/Scenes/ThuribleScene.unity
+  - enabled: 1
+    path: Assets/Scenes/Candle game.unity
+  - enabled: 1
+    path: Assets/Scenes/CandleInfo.unity

@@ -233,7 +233,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1811233266}
         m_MethodName: NextScreen
         m_Mode: 1
         m_Arguments:
@@ -722,8 +722,8 @@ MonoBehaviour:
   infoTextBox: {fileID: 386169862}
   infoText: Hi, I'm the Exor-Sister but most people just call me, Sister.  Welcome
     to your first day on the job and boy will it be exciting.  We' ve got an exorcism
-    right off the bat.  First, you have to swing the thurible.  Make sure you hit
-    it at the right times or the ritual won't work.
+    right off the bat.  First, you have to swing the tu-th-thurible.  Make sure you
+    hit it at the right times or the ritual won't work.
   letterRevealSpeed: 20
   continueButton: {fileID: 981628984}
   nextScreen: ThuribleScene

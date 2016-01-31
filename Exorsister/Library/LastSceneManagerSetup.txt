@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Candle game.unity
-=======
-- path: Assets/Scenes/ThuribleInfo.unity
->>>>>>> a095630ac294e75fac7144c308131eec2559cde5
+- path: Assets/Scenes/title.unity
   isLoaded: 1
   isActive: 1
