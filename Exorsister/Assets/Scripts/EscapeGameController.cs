@@ -11,6 +11,7 @@ public class EscapeGameController : MinigameController
 	// Use this for initialization
 	void Start () 
 	{
+        nextScene = "Win Screen";
 		demonEscape = demon.GetComponent<DemonEscapeScript> ();
 	}
 	

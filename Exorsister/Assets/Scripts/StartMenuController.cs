@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 #endif
 
 public class StartMenuController : MonoBehaviour {
-    public string FirstGame = "Fly Swatter";
+    public string FirstGame = "PentagramDrawingGame";
 	public void StartGame()
     {
 #if UNITY_5_3

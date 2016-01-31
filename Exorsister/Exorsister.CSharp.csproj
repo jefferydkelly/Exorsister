@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\FlyGameController.cs" />
     <Compile Include="Assets\Scripts\GameObjectController.cs" />
     <Compile Include="Assets\Scripts\GameOverScreenController.cs" />
+    <Compile Include="Assets\Scripts\InfoScreenController.cs" />
     <Compile Include="Assets\Scripts\MinigameController.cs" />
     <Compile Include="Assets\Scripts\PentagramGameController.cs" />
     <Compile Include="Assets\Scripts\PentagramPointController.cs" />

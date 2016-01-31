@@ -22,11 +22,11 @@ public class MinigameController : MonoBehaviour {
 
     public void Win()
     {
-		//SceneManager.LoadScene(nextScene);
+
 #if UNITY_5_3
-		SceneManager.LoadScene("Win Screen");
+        SceneManager.LoadScene(nextScene);
 #else
-		Application.LoadLevel("Win Screen");
+		Application.LoadLevel(nextScene);
 #endif
 	}
 

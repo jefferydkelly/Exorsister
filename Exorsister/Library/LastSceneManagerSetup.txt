@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Holy Water Game.unity
+- path: Assets/Scenes/PentagramIntro.unity
   isLoaded: 1
   isActive: 1

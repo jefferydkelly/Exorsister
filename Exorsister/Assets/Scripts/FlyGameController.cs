@@ -11,22 +11,10 @@ public class FlyGameController : MinigameController {
     public Text fliesRemainingText;
     public Text hitText;
 
-    private float speed = 5.0f;
-    private Vector3 forward = new Vector2(1, 0);
-
-
-
-    //WEIGHTING!!!!----------------------
-    //Safe distance
-    public float avoidWeight = 80.0f;
-    //variable weight for the vectors
-    public float alignW, seperateW, cohW;
-    public float sepDist;
-
 
     // Use this for initialization
     void Start () {
-	
+        nextScene = "HolyWaterInfoScene";
 	}
 	
 	// Update is called once per frame
