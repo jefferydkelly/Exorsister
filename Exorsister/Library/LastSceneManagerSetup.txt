@@ -1,4 +1,12 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/FlyInfoScene.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/Candle game.unity
+=======
+- path: Assets/Scenes/HolyWaterInfoScene.unity
+>>>>>>> bb559e9d6e075c6754fd6522f24f047916a2b0c2
+>>>>>>> 2ac611fd88fc1dface32a8922b3ad95b6a5fc242
   isLoaded: 1
   isActive: 1

@@ -6,9 +6,11 @@ public class ThuribleGame : MinigameController {
    
     public float time = 15f;
     public  List<GameObject> gos;
+    private AudioSource audio;
 	// Use this for initialization
 	void Start () {
         Invoke("SelectFirst", 0.25f);
+        audio = GetComponent<AudioSource>();
     }
 
     public void SelectFirst ()
@@ -28,6 +30,7 @@ public class ThuribleGame : MinigameController {
 
     public void SelectCube(GameObject go)
     {
+        audio.Play();
         List<int> indexes = new List<int>();
         indexes.Add(0);
         indexes.Add(1);
