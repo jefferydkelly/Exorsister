@@ -81,6 +81,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2e0c0fd559d97459422aa7eb19362e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0, z: 0}
+  maxSpeed: 7
+  maxForce: 15
+  mass: 1
+  radius: 1
+  wanderDistance: 5
+  wanderRadius: 3
+  seekWeight: 150
+  safeDist: 10
+  avoidWeight: 80
+  mouseDist: 1
+  alignW: 0.2
+  seperateW: 0.2
+  cohW: 0.2
+  fleeW: 0.2
+  seekW: 0.2
+  lesserSeekW: 0.2
+  inBoundsW: 1
+  wanderW: 0.5
+  sepDist: 2
+  velDir: {x: 0, y: 0, z: 0}
+  velCenter: {x: 0, y: 0, z: 0}
 --- !u!212 &21202102
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -129,6 +151,70 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: wanderDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: wanderRadius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mouseDist
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: alignW
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: seperateW
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cohW
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fleeW
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: seekW
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lesserSeekW
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: inBoundsW
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: wanderW
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sepDist
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

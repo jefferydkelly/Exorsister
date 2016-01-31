@@ -11,6 +11,7 @@ abstract public class VehicleControler : GameObjectController {
     public Vector3 velocity;
     protected Vector3 desired;
     protected Vector3 seekBounds;
+    protected Vector3 forward;
 
     //public for changing in Inspector
     //define movement behaviors
@@ -18,15 +19,12 @@ abstract public class VehicleControler : GameObjectController {
     public float maxForce;
     public float mass;
     public float radius;
-
-    public GameObjectController gameControl;//the game object controller
-    public MinigameController mG;//the minigame object for accessing other objects
+    public float wanderDistance;
+    public float wanderRadius;
 
     void Start () {
         acceleration = Vector3.zero;
-        velocity = transform.forward;
-        gameControl = GetComponent<GameObjectController>();//getting a refrence to the other script
-        mG = GetComponent<MinigameController>();//getting refrence to the script
+        velocity = new Vector3(1, 0, 0);
     }
 
     /// <summary>
@@ -39,15 +37,15 @@ abstract public class VehicleControler : GameObjectController {
         CalcSteeringForces();
         //Debug.Log ("acceleration: " + acceleration.x + " " + acceleration.y + " " + acceleration.z);
         velocity += acceleration * Time.deltaTime;
-        velocity.z = 1;//setting the z location to be default 1 for now
+        velocity.z = 0;//setting the z location to be default 1 for now
 
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
 
-
+        transform.position += velocity * Time.deltaTime;
 
         //reset
         acceleration = Vector3.zero;
-        transform.forward = velocity.normalized;
+        forward = velocity.normalized;
     }
 
     /// <summary>
@@ -70,7 +68,7 @@ abstract public class VehicleControler : GameObjectController {
         desired = transform.position - moveFrom;
         desired = desired.normalized * maxSpeed;
         desired -= velocity;
-        desired.y = 0;
+        desired.z = 0;
         return desired;
     }
 
@@ -107,11 +105,11 @@ abstract public class VehicleControler : GameObjectController {
         if (Vector3.Dot(desired, velocity) < 0)
         {
             desired -= velocity;
-            desired.y = 0;//dont need to seek y, only z and x
+            desired.z = 0;//dont need to seek y, only z and x
         }
         else {
             desired += velocity;
-            desired.y = 0;//dont need to seek y, only z and x
+            desired.z = 0;//dont need to seek y, only z and x
         }
 
         //desired.y = 0;
@@ -141,6 +139,14 @@ abstract public class VehicleControler : GameObjectController {
         //Debug.DrawLine(transform.position,cohVect,Color.black);
         return Seek(cohVect);
 
+    }
+
+    public Vector3 Wander()
+    {
+        float ang = Random.Range(0, Mathf.PI * 2);
+        Vector3 v = transform.position + forward * wanderDistance;
+        v += new Vector3(Mathf.Cos(ang), Mathf.Sin(ang)) * wanderRadius;
+        return Seek(v);
     }
 
 }
