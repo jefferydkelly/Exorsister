@@ -6,7 +6,7 @@ public class FinishScript : MinigameController {
     public float timer = 20;
 	// Use this for initialization
 	void Start () {
-        nextScene = "FlyInfoScene";
+       
 	}
 	
     public void increaseScore()

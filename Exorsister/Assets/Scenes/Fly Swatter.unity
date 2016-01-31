@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mousePos: {x: 0, y: 0, z: 0}
-  nextScene: 
+  nextScene: FlyWinScreen
   timeRemaining: 60
   timeRemainingText: {fileID: 240126124}
   fliesRemainingText: {fileID: 682674672}

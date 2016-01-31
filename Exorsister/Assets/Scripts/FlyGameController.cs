@@ -14,7 +14,7 @@ public class FlyGameController : MinigameController {
 
     // Use this for initialization
     void Start () {
-        nextScene = "HolyWaterInfoScene";
+        
 	}
 	
 	// Update is called once per frame
