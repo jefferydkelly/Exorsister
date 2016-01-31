@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 [RequireComponent(typeof(LineRenderer))]
 public class PentagramGameController : MinigameController {
     // Use this for initialization
@@ -11,7 +12,10 @@ public class PentagramGameController : MinigameController {
     public bool lineUnbroken = false;
     public float radius = 10;
     public int phase = 1;
+    public Text timeRemaining;
+    public float timeLimit = 30;
 	void Start () {
+        Debug.Log("Start");
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.SetVertexCount(0);
         lineRenderer.SetColors(Color.white, Color.white);
@@ -34,6 +38,7 @@ public class PentagramGameController : MinigameController {
         }
 
         points[0].GetComponent<PentagramPointController>().select(true);
+        nextScene = "FlyInfoScene";
     }
 
     public void AddPoint(PentagramPointController p)
@@ -85,6 +90,13 @@ public class PentagramGameController : MinigameController {
 
     // Update is called once per frame
     void Update () {
-	    
+        timeLimit -= Time.deltaTime;
+
+        if (timeLimit <= 0)
+        {
+            Lose();
+        }
+
+        timeRemaining.text = "Time Remanining: " + Mathf.FloorToInt(timeLimit);
 	}
 }

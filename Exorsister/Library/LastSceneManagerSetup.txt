@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Candle game.unity
+- path: Assets/Scenes/HolyWaterInfoScene.unity
   isLoaded: 1
   isActive: 1
