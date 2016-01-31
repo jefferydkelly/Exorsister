@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/PentagramIntro.unity
+=======
+- path: Assets/Scenes/ThuribleScene.unity
+>>>>>>> d43093295c8d9884d2273f4526aaf7e417c57f33
   isLoaded: 1
   isActive: 1

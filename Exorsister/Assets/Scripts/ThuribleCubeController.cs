@@ -41,6 +41,8 @@ public class ThuribleCubeController : MonoBehaviour {
         {
             controller.Lose();
         }
+
+        isColliding = false;
     }
 
     public void select(bool selected)
