@@ -4,42 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Resources/Scenes/title.unity
-  - enabled: 1
-    path: Assets/Resources/Scenes/Holy Water Game.unity
-  - enabled: 1
-    path: Assets/Resources/Scenes/Fly Swatter.unity
-  - enabled: 1
-    path: Assets/Resources/Scenes/Game Over.unity
-  - enabled: 1
-    path: Assets/Resources/Scenes/Win Screen.unity
-  - enabled: 1
-    path: Assets/Resources/Scenes/FlyInfoScene.unity
-  - enabled: 1
-    path: Assets/Resources/Scenes/HolyWaterInfoScene.unity
-  - enabled: 1
-    path: Assets/Resources/Scenes/PentagramIntro.unity
-  - enabled: 1
-    path: Assets/Resources/Scenes/PentragramDrawingGame.unity
-  - enabled: 1
-    path: Assets/Resources/Scenes/ThuribleInfo.unity
-  - enabled: 1
-    path: Assets/Resources/Scenes/ThuribleScene.unity
-  - enabled: 1
-    path: Assets/Resources/Scenes/Candle game.unity
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/CandleInfo.unity
-  - enabled: 1
-    path: Assets/Scenes/FlyWinScreen.unity
-  - enabled: 1
-    path: Assets/Scenes/CandleWinScene.unity
-  - enabled: 1
-    path: Assets/Scenes/PentagramWinScene.unity
-  - enabled: 1
-    path: Assets/Scenes/ThurimleWinScreen.unity
-=======
-    path: Assets/Resources/Scenes/CandleInfo.unity
->>>>>>> 04e76a7ee7538008a284884c2fb56d8c20a43b9e
+  m_Scenes: []

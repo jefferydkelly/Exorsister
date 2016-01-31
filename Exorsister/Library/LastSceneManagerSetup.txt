@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/FlyInfoScene.unity
-=======
-- path: Assets/Resources/Scenes/Holy Water Game.unity
->>>>>>> 04e76a7ee7538008a284884c2fb56d8c20a43b9e
+- path: Assets/Scenes/HolyWaterInfoScene.unity
   isLoaded: 1
   isActive: 1
