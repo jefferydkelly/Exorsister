@@ -56,7 +56,7 @@ public class FlyController : VehicleControler {
             }
             else if(dist > mouseDist)
         {
-            flockingForce += Seek(new Vector3(1, 0, 0)) * seekW;
+            flockingForce += Seek(new Vector3(0, 0, 0)) * seekW;
             flockingForce += Alignment(velDir)*alignW;
             flockingForce += Seperation(sepDist, flies)*seperateW;
             flockingForce += Cohesion(velCent)*cohW;
