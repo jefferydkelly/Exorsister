@@ -4,45 +4,34 @@ using System.Collections.Generic;
 
 public class ThuribleGame : MinigameController {
    
-    public float time = 15f;
-    public  List<GameObject> gos;
+    public  List<ThuribleCubeController> cubes;
     private AudioSource audio;
+    Timer firstSelectTimer;
+
 	// Use this for initialization
 	void Start () {
-        Invoke("SelectFirst", 0.25f);
+        base.Start();
+        firstSelectTimer = new Timer(0.25f);
+        firstSelectTimer.OnComplete.AddListener(SelectFirst);
+        firstSelectTimer.Start();
         audio = GetComponent<AudioSource>();
+        gameTimer.OnComplete.AddListener(Win);
     }
 
     public void SelectFirst ()
     {
-        gos[2].GetComponent<ThuribleCubeController>().select(true);
-    }
-	
-	// Update is called once per frame
-	void Update () {
-
-        time -= Time.deltaTime;
-        if (time <= 0)
-        {
-            Win();
-        }
+        cubes[2].IsSelected = true;
     }
 
-    public void SelectCube(GameObject go)
+    public void SelectCube(ThuribleCubeController go)
     {
         audio.Play();
         List<int> indexes = new List<int>();
         indexes.Add(0);
         indexes.Add(1);
         indexes.Add(2);
-        indexes.RemoveAt(gos.IndexOf(go));
-        Debug.Log(gos.IndexOf(go));
-        if (Random.Range(0, 2) == 1)
-        {
-            gos[indexes[0]].GetComponent<ThuribleCubeController>().select(true);
-        } else
-        {
-            gos[indexes[1]].GetComponent<ThuribleCubeController>().select(true);
-        }
+        indexes.RemoveAt(cubes.IndexOf(go));
+
+        cubes[indexes[Random.Range(0, 2)]].IsSelected = true;
     }
 }

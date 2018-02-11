@@ -8,53 +8,62 @@ public class PentagramPointController : GameObjectController {
     public PentagramGameController controller;
    
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (IsMouseBeingDraggedOver() && controller.lineUnbroken)
-        {
-            if (isSelected)
-            {
-                select(false);
-                GetComponent<AudioSource>().Play();
-                controller.AddPoint(this);
-                if (controller.phase < 3)
-                {
-                    pair.select(true);
-                    
-                } 
-            }
+    public bool IsSelected {
+        get {
+            return isSelected;
         }
 
-        if (IsBeingClicked() && isSelected)
-        {
+        set {
+            isSelected = value;
+
+            if (isSelected) {
+                spriteRenderer.color = Color.red;
+			}
+			else
+			{
+                spriteRenderer.color = Color.white;
+			}
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        if (isSelected) {
             controller.lineUnbroken = true;
+            pair.IsSelected = true;
+            controller.AddPoint(this);
+            IsSelected = false;
         }
+    }
 
-        if (!Input.GetMouseButton(0)) { 
-            if (pair.isSelected && controller.lineUnbroken)
-            {
-                controller.lineUnbroken = false;
-                pair.select(false);
-                select(true);
-                controller.RemovePoint(this);
-            }
-        }
-	}
 
-    public void select(bool selected)
+    private void OnMouseUp()
     {
-        isSelected = selected;
-        if (selected)
-        {
-            GetComponent<SpriteRenderer>().color = Color.red;
-        } else
-        {
-            GetComponent<SpriteRenderer>().color = Color.white;
+        if (isSelected) {
+			controller.lineUnbroken = false;
+			pair.IsSelected = false; ;
+			IsSelected = true;
+			controller.RemovePoint(this);
+        }
+    }
+
+    private void OnMouseOver()
+    {
+        if (IsSelected && controller.lineUnbroken) {
+
+            IsSelected = false;
+			GetComponent<AudioSource>().Play();
+            controller.AddPoint(this);
+			if (controller.phase < 3)
+			{
+                pair.IsSelected = true;
+
+			}
+			
         }
     }
 }

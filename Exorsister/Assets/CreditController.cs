@@ -16,11 +16,6 @@ public class CreditController : MonoBehaviour {
 
     public void StartGame()
     {
-#if UNITY_5_3
         SceneManager.LoadScene("ThuribleInfo");
-
-#else
-        Application.LoadLevel("ThuribleInfo");
-#endif
     }
 }

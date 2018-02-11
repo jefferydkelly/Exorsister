@@ -7,37 +7,55 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/title.unity
-  - enabled: 1
-    path: Assets/Scenes/Candle game.unity
-  - enabled: 1
-    path: Assets/Scenes/CandleInfo.unity
-  - enabled: 1
-    path: Assets/Scenes/CandleWinScene.unity
-  - enabled: 1
-    path: Assets/Scenes/CreditsScene.unity
-  - enabled: 1
-    path: Assets/Scenes/Fly Swatter.unity
-  - enabled: 1
-    path: Assets/Scenes/FlyInfoScene.unity
-  - enabled: 1
-    path: Assets/Scenes/FlyWinScreen.unity
-  - enabled: 1
-    path: Assets/Scenes/Game Over.unity
-  - enabled: 1
-    path: Assets/Scenes/Holy Water Game.unity
-  - enabled: 1
-    path: Assets/Scenes/HolyWaterInfoScene.unity
-  - enabled: 1
-    path: Assets/Scenes/PentagramIntro.unity
-  - enabled: 1
-    path: Assets/Scenes/PentagramWinScene.unity
-  - enabled: 1
-    path: Assets/Scenes/PentragramDrawingGame.unity
-  - enabled: 1
-    path: Assets/Scenes/ThuribleInfo.unity
+    guid: 9f8430fc66c3da442a72eb2dbdfe0ca1
   - enabled: 1
     path: Assets/Scenes/ThuribleScene.unity
+    guid: fe4d071c33fdecb499c5b4c97f387b4c
+  - enabled: 1
+    path: Assets/Scenes/PentragramDrawingGame.unity
+    guid: c2dbd732e4f0ef944b05e8dde928e477
+  - enabled: 1
+    path: Assets/Scenes/Candle game.unity
+    guid: 7fe2048ce79d92e4bb69498a52eb154c
+  - enabled: 1
+    path: Assets/Scenes/CandleInfo.unity
+    guid: bb0d69ca7d402664c8ae3036e045df10
+  - enabled: 1
+    path: Assets/Scenes/CandleWinScene.unity
+    guid: f4e8fd2090c4e9c44ad6b665944779f5
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 723193263db55894f8a9afbd60a5f818
+  - enabled: 1
+    path: Assets/Scenes/FlyInfoScene.unity
+    guid: 1f3dd7ab8d83b7349b065e6278945952
+  - enabled: 1
+    path: Assets/Scenes/Fly Swatter.unity
+    guid: 8ea73fed7095fcb429b754b3ad4279ba
+  - enabled: 1
+    path: Assets/Scenes/FlyWinScreen.unity
+    guid: 72096c0e8bc33fa4d80ba6f7aca6d442
+  - enabled: 1
+    path: Assets/Scenes/Holy Water Game.unity
+    guid: d3ff6aaaf62eb4b4896cbde6846145a6
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: 01117f8bce509834aa76dac735b01784
+  - enabled: 1
+    path: Assets/Scenes/HolyWaterInfoScene.unity
+    guid: 3f71746cc5c580d43a79158077b06705
+  - enabled: 1
+    path: Assets/Scenes/PentagramIntro.unity
+    guid: 2968a4415742e774c852334d9ee0a045
+  - enabled: 1
+    path: Assets/Scenes/PentagramWinScene.unity
+    guid: d9f1be6e25c6521478f0e66d4f2f3cfd
+  - enabled: 1
+    path: Assets/Scenes/ThuribleInfo.unity
+    guid: f772c946764d5ac4cbf7032e42b9f104
   - enabled: 1
     path: Assets/Scenes/ThurimleWinScreen.unity
+    guid: 124696fb50630554cadd852ed315c8bd
   - enabled: 1
     path: Assets/Scenes/Win Screen.unity
+    guid: f64ccf25d477d6943b239c435ebdb605

@@ -1,18 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
-#if UNITY_5_3
 using UnityEngine.SceneManagement;
-#endif
+using UnityEngine.UI;
 
 public class StartMenuController : MonoBehaviour {
     public string FirstGame = "Fly Swatter";
-	public void StartGame()
+    [SerializeField]
+    Button quitButton;
+
+    private void Awake()
     {
-#if UNITY_5_3
+        if (Application.isMobilePlatform) {
+            quitButton.gameObject.SetActive(false);
+        }
+    }
+    public void StartGame()
+    {
 		SceneManager.LoadScene(FirstGame);
-#else
-		Application.LoadLevel(FirstGame);
-#endif
 	}
 
 	public void QuitGame()
@@ -22,11 +26,6 @@ public class StartMenuController : MonoBehaviour {
 
     public void GoToCredits()
     {
-#if UNITY_5_3
         SceneManager.LoadScene("CreditsScene");
-
-#else
-		Application.LoadLevel("CreditsScene");
-#endif
     }
 }

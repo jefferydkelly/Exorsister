@@ -71,7 +71,7 @@ public class FlyController : VehicleControler {
 
     void Update()
     {
-        if (!dead)
+        if (!IsDead)
         {
             CalcSteeringForces();
             //Debug.Log ("acceleration: " + acceleration.x + " " + acceleration.y + " " + acceleration.z);
@@ -127,9 +127,20 @@ public class FlyController : VehicleControler {
 
     public void Splat()
     {
-        GameObject mySplat = GameObject.Instantiate(splat);
+        GameObject mySplat = Instantiate(splat);
         mySplat.transform.position = new Vector3(transform.position.x, transform.position.y, 3);
-        
+        EventManager.TriggerEvent("FlySwatted");
         Destroy(gameObject);
+    }
+
+    public override void OnClick()
+    {
+        dead = true;
+    }
+
+    public bool IsDead {
+        get {
+            return dead;
+        }
     }
 }

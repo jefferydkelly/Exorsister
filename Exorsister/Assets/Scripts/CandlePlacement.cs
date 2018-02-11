@@ -24,12 +24,4 @@ public class CandlePlacement : MonoBehaviour {
             Camera.main.GetComponent<AudioSource>().Play();
         }
     }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 }

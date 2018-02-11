@@ -8,6 +8,7 @@ public class MinigameWinScreenControiller :InfoScreenController {
 
 	// Use this for initialization
 	void Start () {
+        base.Start();
         int ind = Random.Range(0, clips.Count);
         AudioSource audio = GetComponent<AudioSource>();
         audio.clip = clips[ind];

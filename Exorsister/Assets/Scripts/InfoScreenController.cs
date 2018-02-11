@@ -1,54 +1,48 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-#if UNITY_5_3
 using UnityEngine.SceneManagement;
-#endif
 
 public class InfoScreenController : MonoBehaviour {
     public Text infoTextBox;
     public string infoText;
+    [SerializeField]
+    string mobileText;
     public float letterRevealSpeed;
     private int lettersRevealed = 0;
-    private bool completelyRevealed = false;
-    private float timePassed = 0;
     public Button continueButton;
     public string nextScreen;
+    Timer revealTimer;
 	// Use this for initialization
-	void Start () {
+	public void Start () {
         infoTextBox.text = "";
-        Debug.Log("Starting");
         continueButton.gameObject.SetActive(false);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (!completelyRevealed)
-        {
-            timePassed += Time.deltaTime;
-            if (timePassed >= 1 / letterRevealSpeed)
-            {
-                lettersRevealed++;
-                timePassed -= (1 / letterRevealSpeed);
-                infoTextBox.text = infoText.Substring(0, lettersRevealed);
-                completelyRevealed = (lettersRevealed == infoText.ToCharArray().Length);
 
-                if (completelyRevealed)
-                {
-                    continueButton.gameObject.SetActive(true);
-                }
-            }
-            
+        if (Application.isMobilePlatform && mobileText.Length > 0) {
+            infoText = mobileText;
         }
+
+        revealTimer = new Timer(1 / letterRevealSpeed, infoText.Length);
+        revealTimer.OnTick.AddListener(RevealLetter);
+        revealTimer.OnComplete.AddListener(RevealButton);
+        revealTimer.Start();
 	}
+
+    void RevealLetter() {
+        lettersRevealed++;
+        infoTextBox.text = infoText.Substring(0, Mathf.Min(lettersRevealed, infoText.Length));
+    }
+
+    private void Update()
+    {
+        TimerManager.Instance.Update(Time.deltaTime);
+    }
+    void RevealButton() {
+        continueButton.gameObject.SetActive(true);
+    }
 
     public void NextScreen()
     {
-        #if UNITY_5_3
         SceneManager.LoadScene(nextScreen);
-        #else
-        Application.LoadLevel(nextScreen);
-
-        #endif
     }
 }

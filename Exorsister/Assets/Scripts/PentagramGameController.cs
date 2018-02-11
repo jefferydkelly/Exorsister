@@ -6,44 +6,47 @@ using UnityEngine.UI;
 public class PentagramGameController : MinigameController {
     // Use this for initialization
     public GameObject pentPoint;
-    private List<GameObject> points;
+    private List<PentagramPointController> points;
     private List<Vector3> clearedPoints;
     private LineRenderer lineRenderer;
     public bool lineUnbroken = false;
     public float radius = 10;
     public int phase = 1;
-    public Text timeRemaining;
-    public float timeLimit = 30;
+
 	void Start () {
-        
+        base.Start();
         lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.SetVertexCount(0);
-        lineRenderer.SetColors(Color.white, Color.white);
+        lineRenderer.positionCount = 0;
+        lineRenderer.startColor = Color.white;
+        lineRenderer.endColor = Color.white;
         float sevenTwo = 72 * Mathf.Deg2Rad;
-        points = new List<GameObject>();
+        points = new List<PentagramPointController>();
         clearedPoints = new List<Vector3>();
         for (int i = 0; i < 5; i++)
         {
             float ang = Mathf.PI * 3 / 2 + sevenTwo * i;
             Vector3 pos = new Vector3(Mathf.Cos(ang), Mathf.Sin(ang), 0) * radius;
-            GameObject newPoint = GameObject.Instantiate(pentPoint);
+            PentagramPointController newPoint = Instantiate(pentPoint).GetComponent<PentagramPointController>();
             newPoint.transform.position = pos;
-            newPoint.GetComponent<PentagramPointController>().controller = this;
+            newPoint.controller = this;
             points.Add(newPoint);
         }
 
         for (int i = 0; i < 5; i++)
         {
-            points[i].GetComponent<PentagramPointController>().pair = points[(i + 3) % 5].GetComponent<PentagramPointController>();
+            points[i].pair = points[(i + 3) % 5];
         }
 
-        points[0].GetComponent<PentagramPointController>().select(true);
+        points[0].IsSelected = true;
+
+     
+        gameTimer.OnComplete.AddListener(Lose);
     }
 
     public void AddPoint(PentagramPointController p)
     {
         clearedPoints.Add(p.transform.position);
-        lineRenderer.SetVertexCount(clearedPoints.Count);
+        lineRenderer.positionCount = clearedPoints.Count;
         lineRenderer.SetPositions(clearedPoints.ToArray());
         
         if (clearedPoints.Count == 6)
@@ -53,16 +56,16 @@ public class PentagramGameController : MinigameController {
             for (int i = 0; i < points.Count; i++)
             {
                 float ang = Mathf.PI * 3 / 2 + sevenTwo * i;
-                GameObject go = points[i];
-                circlePoints.Add(go.GetComponent<PentagramPointController>());
+                PentagramPointController point = points[i];
+                circlePoints.Add(point);
 
                 for (int j = 0; j < 2; j++)
                 {
                     ang += sevenTwo / 3;
-                    GameObject newPoint = GameObject.Instantiate(pentPoint);
+                    PentagramPointController newPoint = Instantiate(pentPoint).GetComponent<PentagramPointController>();
                     newPoint.transform.position = new Vector3(Mathf.Cos(ang), Mathf.Sin(ang), 0) * radius;
-                    newPoint.GetComponent<PentagramPointController>().controller = this;
-                    circlePoints.Add(newPoint.GetComponent<PentagramPointController>());
+                    newPoint.controller = this;
+                    circlePoints.Add(newPoint);
                 }
 
             }
@@ -73,11 +76,11 @@ public class PentagramGameController : MinigameController {
                 circlePoints[i].pair = circlePoints[(i - 1 + circlePoints.Count) % circlePoints.Count];
             }
             phase++;
-            circlePoints[0].select(true);
+            circlePoints[0].IsSelected = true;
         } else if (clearedPoints.Count == 22)
         {
             phase++;
-            Invoke("Win", 3.0f);
+            Win();
         }
     }
 
@@ -85,19 +88,4 @@ public class PentagramGameController : MinigameController {
     {
         clearedPoints.Remove(p.transform.position);
     }
-
-    // Update is called once per frame
-    void Update () {
-        if (phase < 3)
-        {
-            timeLimit -= Time.deltaTime;
-        }
-
-        if (timeLimit <= 0)
-        {
-            Lose();
-        }
-
-        timeRemaining.text = "Time Remanining: " + Mathf.FloorToInt(timeLimit);
-	}
 }

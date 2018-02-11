@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ThuribleCubeController : MonoBehaviour {
+public class ThuribleCubeController : ClickableObject {
     public Material normalMat;
     public Material selectedMat;
     public bool isSelected;
@@ -17,18 +17,34 @@ public class ThuribleCubeController : MonoBehaviour {
         {
             myRenderer.material = normalMat;
         }
+
+        if (Application.isMobilePlatform) {
+            transform.localScale *= 2;
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
-	    if (Input.GetKeyDown(key) && isSelected && isColliding)
+        if (Input.GetKeyDown(key))
         {
-            //Show hit message
-            select(false);
-            //tell manager to select a new cube
-            controller.SelectCube(gameObject);
+            Check();
         }
 	}
+
+    public override void OnClick()
+    {
+        if (Application.isMobilePlatform) {
+            Check();
+        }
+    }
+
+    void Check() {
+        if (IsSelected && isColliding) {
+			IsSelected = false;
+			//tell manager to select a new cube
+			controller.SelectCube(this);
+        }
+    }
 
     void OnTriggerEnter(Collider col)
     {
@@ -45,22 +61,28 @@ public class ThuribleCubeController : MonoBehaviour {
         isColliding = false;
     }
 
-    public void select(bool selected)
-    {
-        isSelected = selected;
+    public bool IsSelected {
+        get {
+            return isSelected;
+        }
 
-        if (isSelected)
-        {
-            if (myRenderer != null)
-            {
-                myRenderer.material = selectedMat;
-            }
-        } else
-        {
-            if (myRenderer != null)
-            {
-                myRenderer.material = normalMat;
-            }
+        set {
+            isSelected = value;
+
+			if (isSelected)
+			{
+				if (myRenderer != null)
+				{
+					myRenderer.material = selectedMat;
+				}
+			}
+			else
+			{
+				if (myRenderer != null)
+				{
+					myRenderer.material = normalMat;
+				}
+			}
         }
     }
 }

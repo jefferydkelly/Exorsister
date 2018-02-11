@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
-#if UNITY_5_3
 using UnityEngine.SceneManagement;
-#endif
+using UnityEngine.UI;
 
 public class GameOverScreenController : MonoBehaviour {
 
-	public void Restart()
+    [SerializeField]
+    Button quitButton;
+    private void Awake()
     {
-#if UNITY_5_3
+        if (Application.isMobilePlatform) {
+            quitButton.gameObject.SetActive(false);
+        }
+    }
+    public void Restart()
+    {
 		SceneManager.LoadScene("title");
-#else
-		Application.LoadLevel("title");
-#endif
 	}
 
     public void Quit()
