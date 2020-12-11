@@ -5,21 +5,27 @@ using UnityEngine;
 public class Demon : ClickableObject {
 
     Vector3 startPoint = Vector3.zero;
-    float speedMod = 5.0f;
+    float speedMod = 4.0f;
     float maxDistance = 5.0f;
 
+    [SerializeField]
+    AudioClip[] soundFX;
+    AudioSource src;
     private void Awake()
     {
         startPoint = transform.position;
+        src = GetComponent<AudioSource>();
     }
 
     public override void OnClick()
     {
-		transform.position = startPoint;
-		int direction = Random.Range(0, 8);
+        //transform.position = startPoint;
+       
+		int direction = Random.Range(3, 6);
 
-		transform.rotation = Quaternion.identity;
+		//transform.rotation = Quaternion.identity;
         transform.Rotate(0, 0, direction * 45);
+        src.PlayOneShot(soundFX[Random.Range(0, 3)], 0.125f);
     }
 
 	void Update()

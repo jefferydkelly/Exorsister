@@ -8,9 +8,9 @@ TagManager:
   - Control
   - Blue
   - Red
-  - Black
   - Yellow
-  - Gray
+  - Pink
+  - Green
   layers:
   - Default
   - TransparentFX

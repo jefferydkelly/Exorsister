@@ -1,0 +1,53 @@
+﻿<Properties StartupConfiguration="{1F1D6FAE-D332-E761-AA11-1DF67EEB6EE5}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CandlePlacement.cs">
+    <Files>
+      <File FileName="Assets/Scripts/CandleController.cs" Line="18" Column="106" />
+      <File FileName="Assets/Scripts/Demon.cs" Line="28" Column="57" />
+      <File FileName="Assets/Scripts/CandlePlacement.cs" Line="8" Column="32" />
+      <File FileName="Assets/Scripts/FlyGameController.cs" />
+      <File FileName="Assets/Scripts/FlyController.cs" />
+      <File FileName="Assets/Scripts/SplatController.cs" />
+      <File FileName="Assets/Scripts/VehicleControler.cs" />
+      <File FileName="Assets/Scripts/GameObjectController.cs" />
+      <File FileName="Assets/Scripts/PentagramPointController.cs" />
+      <File FileName="Assets/Scripts/PentagramGameController.cs" />
+      <File FileName="Assets/Scripts/ThuribleGame.cs" />
+      <File FileName="Assets/Scripts/StartMenuController.cs" />
+      <File FileName="Assets/Scripts/InfoScreenController.cs" />
+      <File FileName="Assets/CreditController.cs" />
+      <File FileName="Assets/Scripts/ExtensionMethods.cs" />
+      <File FileName="Assets/Scripts/TimerManager.cs" />
+      <File FileName="Assets/Scripts/MinigameController.cs" />
+      <File FileName="Assets/Scripts/EventManager.cs" />
+      <File FileName="Assets/Scripts/EscapeGameController.cs" />
+      <File FileName="Assets/Scripts/FinishScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ClickableObject.cs" />
+      <File FileName="Assets/Scripts/ThuribleCubeController.cs" />
+      <File FileName="Assets/Scripts/VictoryScreenController.cs" />
+      <File FileName="Assets/Scripts/GameOverScreenController.cs" />
+      <File FileName="Assets/Scripts/MinigameWinScreenControiller.cs" />
+      <File FileName="Assets/Scripts/_Color_Select_Script.cs" Line="34" Column="21" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Exorsister" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="CandlePlacement.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Exorsister PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d8223377-e3c5-4d44-b9cf-c0a8af3c0d69" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
